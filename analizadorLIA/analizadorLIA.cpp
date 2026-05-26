@@ -379,7 +379,7 @@ std::string obtenerTexto(HWND hEdit) {
 void ponerTexto(HWND hEdit, const std::string& texto) {
     SetWindowTextA(hEdit, texto.c_str());
 }
-
+// permite leer archivos .lia como fue solicitado, aunque tambien agregue la opcion de .txt meramente por pruebas, asi que tambien es valido
 void abrirArchivo(HWND hwnd) {
     char nombre[MAX_PATH] = "";
     OPENFILENAMEA ofn;
@@ -410,7 +410,7 @@ void abrirArchivo(HWND hwnd) {
         }
     }
 }
-
+//en este caso siempre creara los archivos .lia ya que eso fue lo solicitado 
 void guardarArchivo(HWND hwnd) {
     char nombre[MAX_PATH] = "";
     if (!archivoActual.empty())
@@ -487,7 +487,7 @@ void analizarCodigo() {
         ssErrores << "-------------------------\r\n";
         ssErrores << "Total errores: " << totalErrores << "\r\n";
     }
-
+// como no tenemos aun el analizador sintactico no lo agregue
     std::stringstream ssSintaxis;
     if (totalErrores == 0) {
        
